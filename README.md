@@ -1,27 +1,49 @@
-# React + TypeScript + Vite
+<style>
+.auth {
+   display: flex;
+   gap: 8px;
+   align-items: center;
+   justify-content: center;
+}
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+.auth img {
+   width: 300px;
+}
+</style>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# My Wallet - Client
 
-## Expanding the ESLint configuration
+<p> Projeto de planejamento e controle de custos, o usuário pode criar uma conta, logar e inserir dados de transações de entrada e saída de saldo, contabilizando o saldo atual total.</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instruções de Instalação e execução
+Digite a seguinte sequência de comandos no terminal:
 
-- Configure the top-level `parserOptions` property like this:
+<h5>Sem chave ssh</h5>
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+git clone https://github.com/igor-gui/my-wallet-client
+cd my-wallet-client
+npm i
+npm run dev
+```
+<h5>Com chave ssh</h5>
+
+```
+git clone git@github.com:igor-gui/my-wallet-client.git
+cd my-wallet-client
+npm i
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Tecnologias Utilizadas (Used Techonologies)
+
+```
+Styled-Components, Typescript, React, Vite, Axios, React-Router-Dom, eslint
+```
+## Telas de Autenticação
+<div class='auth'>
+<img src="src/assets/images/Login.png" />
+<img src="src/assets/images/SignUp.png" />
+</div>
