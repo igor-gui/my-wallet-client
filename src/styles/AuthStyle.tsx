@@ -16,12 +16,10 @@ export const AuthBox = styled.main`
     font-weight: 400;
     text-align: left;
     margin-top: 8%;
-    
     color: #FFFFFF;
+    }
     
-    
-    
-}`;
+`;
 
 export const StyledLink = styled(Link)`
     margin-top: 16px;

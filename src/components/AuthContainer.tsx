@@ -5,11 +5,13 @@ import { AuthBox, StyledLink } from "../styles/AuthStyle";
 
 export default function AuthContainer({ children }: { children: ReactNode }) {
     const { pathname } = useLocation();
-    const isSignUp = pathname === '/sign-up';
+    const isSignUp = (pathname === '/sign-up');
 
 
-    const linkRoute = isSignUp ? '/' : '/sign-up'
-    const linkText = isSignUp ?  'Já tem uma conta? Entre agora!' : 'Primeira vez? Cadastre-se!'
+    const { linkRoute, linkText } = isSignUp ?
+        { linkRoute: '/', linkText: 'Já tem uma conta? Entre agora!' }
+        :
+        { linkRoute: '/sign-up', linkText: 'Primeira vez? Cadastre-se!' };
 
 
     return (

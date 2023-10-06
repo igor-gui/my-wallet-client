@@ -36,6 +36,8 @@ npm i
 npm run dev
 ```
 
+Caso o navegador não abra automaticamente, clique no terminal e aperte a tecla "o".
+
 
 ## Tecnologias Utilizadas (Used Techonologies)
 

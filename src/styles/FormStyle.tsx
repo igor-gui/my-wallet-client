@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FormStyle = styled.form`
+export const FormStyle = styled.form`
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,4 @@ export const Button = styled.input`
 
     border: 0;
 
-`
-
-export default FormStyle;
+`;

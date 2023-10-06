@@ -1,4 +1,4 @@
-import FormStyle, { Button, Input } from "../styles/FormStyle"
+import { Button, FormStyle, Input } from "@/styles";
 import AuthContainer from "./AuthContainer"
 
 function SignInCredentials() {
@@ -6,11 +6,11 @@ function SignInCredentials() {
         <FormStyle>
             <Input placeholder="E-mail" type="text" />
             <Input placeholder="Senha" type="text" />
-            <Button type="submit"  value={'Entrar'}/>
+            <Button type="submit" value={'Entrar'} />
         </FormStyle>
     )
 }
 
 const SignInForm = () => <AuthContainer> <SignInCredentials /> </AuthContainer>
 
-export default SignInForm;
+export { SignInForm };
