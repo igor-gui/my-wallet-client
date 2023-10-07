@@ -1,4 +1,8 @@
 
-export const primaryColor = "#A328D6";
+export const buttonCollor = "#A328D6";
+export const textColor = "#ffff";
 
-export const secondaryColor = "#FFFFF"
+
+const numMaxWidth = 500;
+export const maxWidth= `max-width: ${numMaxWidth}px;`;
+export const halfMaxWith = `max-width: ${numMaxWidth/2}px;`;

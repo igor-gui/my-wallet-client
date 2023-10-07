@@ -8,10 +8,10 @@ export const AuthBox = styled.main`
 
     background-color: #630b86;
     width: 100%;
-    min-height: 900px;
+    height: 900px;
 
     h1{
-    font-family: Saira Stencil One;
+    font-family: "Saira Stencil One";
     font-size: 32px;
     font-weight: 400;
     text-align: left;

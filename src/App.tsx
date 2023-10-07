@@ -2,11 +2,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { SignInForm, SignUpForm } from "@/components"
 import { GlobalStyle } from '@/styles'
 import { Home } from './pages'
+import { AuthContextProvider } from './contexts'
 
 function App() {
 
   return (
-    <>
+    <AuthContextProvider>
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
@@ -15,7 +16,7 @@ function App() {
           <Route path='/home' element={<Home />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </AuthContextProvider>
   )
 }
 

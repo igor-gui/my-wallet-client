@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { buttonCollor, textColor } from ".";
 
 export const FormStyle = styled.form`
     margin-top: 30px;
@@ -35,8 +36,8 @@ export const Button = styled.input`
     width: 74%;
     height: 46px;
     border-radius: 5px;
-    background-color: #A328D6;
-    color: #FFFFFF;
+    background-color: ${() => buttonCollor};
+    color: ${() => textColor};
 
     max-width: 298px;
 
@@ -46,4 +47,4 @@ export const Button = styled.input`
 
     border: 0;
 
-`;
+`
