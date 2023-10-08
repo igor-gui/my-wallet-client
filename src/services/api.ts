@@ -1,4 +1,4 @@
-import { TransactionsListGenerator } from "@/hooks";
+// import { TransactionsListGenerator } from "@/hooks";
 import { CreateSessionParams, CreateUserParams } from "@/types";
 import { CreateTransactionParams } from "@/types/transaction.type";
 import axios from "axios";
@@ -25,15 +25,11 @@ export async function postTransactions(data: CreateTransactionParams) {
             authorization: `Bearer ${token}`
         }
     }
-    try {
-    const promise = await api.post(`/nova-transacao/${type}`, { description, price }, config);
-    return TransactionsListGenerator(promise.data)
 
-    }
-    catch (err){
-        console.error(err)
-        return
-    }
+    const promise = await api.post(`/nova-transacao/${type}`, { description, price }, config);
+    return promise;
+
+
 }
 
 export async function getTransactions(token: string) {
@@ -42,16 +38,8 @@ export async function getTransactions(token: string) {
             authorization: `Bearer ${token}`,
         }
     }
-
-    try {
-        const promise = await api.get('/transactions', config);
-        return TransactionsListGenerator(promise.data)
-    
-        }
-        catch (err){
-            console.error(err)
-            return err;
-        }
+    const promise = await api.get('/transactions', config);
+    return promise;
 
 }
 

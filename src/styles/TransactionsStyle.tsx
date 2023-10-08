@@ -4,7 +4,8 @@ import { buttonCollor, halfMaxWith, maxWidth, textColor } from ".";
 export const TransactionBoxStyle = styled.div`
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 
     width: 80%;
@@ -14,6 +15,17 @@ export const TransactionBoxStyle = styled.div`
     border-radius: 5px;
 
     background-color: ${() => textColor};
+    h2 {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        color: #868686;
+        text-align: center;
+        font-family: Raleway;
+        font-weight: 400;
+
+    }
 `;
 
 export const TransactionButtons = styled.div`

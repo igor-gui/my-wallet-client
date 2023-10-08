@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import AuthContainer from "./AuthContainer";
 import { signUp } from "@/services/api";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,15 @@ function SignUpCredentials() {
     const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' })
 
     const navigate = useNavigate()
+
+    useEffect(()=> {
+        
+        const token = localStorage.getItem("token")
+        if(token){
+            navigate('/home');
+        }
+
+    }, [])
 
     function handleForm(e: ChangeEvent<HTMLInputElement>) {
         const { value, name } = e.target;

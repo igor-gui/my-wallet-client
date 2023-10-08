@@ -3,10 +3,8 @@ import dayjs from "dayjs";
 import { ReactNode } from "react";
 
 
-export function TransactionsListGenerator(list: TransactionParams[]) : ReactNode {
-
-
-    const HTMLTransactionsList : ReactNode = list.map(item => {
+export function TransactionsListGenerator(list: TransactionParams[]) : ReactNode[] {
+    const HTMLTransactionsList : ReactNode[] = list.map(item => {
         return (
             <>
                 <span>{dayjs(item.date).format("DD/MM/YYYY")}</span>
@@ -16,9 +14,5 @@ export function TransactionsListGenerator(list: TransactionParams[]) : ReactNode
         )
     })
 
-    return (
-        <div>
-            {HTMLTransactionsList}
-        </div>
-    )
+    return HTMLTransactionsList;
 }

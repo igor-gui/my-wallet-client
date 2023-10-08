@@ -3,12 +3,12 @@ import { HomeStyle, TransactionButtons } from "@/styles";
 
 
 export function Home() {
-
+    const name = localStorage.getItem("name");
 
     return (
         <HomeStyle>
             <div className="container">
-                <h1>Olá, fulano!</h1>
+                <h1>Olá, {name}</h1>
                 <TransactionsBox />
                 <TransactionButtons>
                     <button>Nova Entrada</button>

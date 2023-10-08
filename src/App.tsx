@@ -14,6 +14,7 @@ function App() {
           <Route path='/' element={<SignInForm />} />
           <Route path='/sign-up' element={<SignUpForm />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/new_transaction/:type' element={'aaaaa'}/>
         </Routes>
       </BrowserRouter>
     </AuthContextProvider>

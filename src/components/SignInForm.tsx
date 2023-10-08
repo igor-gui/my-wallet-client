@@ -1,6 +1,6 @@
 import { Button, FormStyle, Input } from "@/styles";
 import AuthContainer from "./AuthContainer"
-import { FormEvent, ReactNode, useContext, useState } from "react";
+import { FormEvent, ReactNode, useContext, useEffect, useState } from "react";
 import { handleForm, signIn } from "@/services";
 import { AuthContext } from "@/contexts";
 import { useNavigate } from "react-router-dom";
@@ -8,16 +8,27 @@ import { CreateSessionParams } from "@/types";
 
 function SignInCredentials(): ReactNode {
     const [form, setForm] = useState({ email: '', password: '' })
-
+    
     const formState = { form, setForm };
     const context = useContext(AuthContext);
     const navigate = useNavigate()
+
+    useEffect(()=> {
+        
+        const token = localStorage.getItem("token")
+        if(token){
+            navigate('/home');
+        }
+
+    }, [])
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>, form: CreateSessionParams) {
         e.preventDefault();
     
         try {
             const { data } = await signIn(form);
+            localStorage.setItem("name", data.name);
+            localStorage.setItem("token", data.token);
             context?.setUser(data)
             navigate('/home');
         } catch (error) {
