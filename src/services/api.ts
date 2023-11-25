@@ -26,7 +26,7 @@ export async function postTransactions(data: CreateTransactionParams) {
         }
     }
 
-    const promise = await api.post(`/nova-transacao/${type}`, { description, price }, config);
+    const promise = await api.post(`/nova-transacao/${type}`, { description, price, type }, config);
     return promise;
 
 

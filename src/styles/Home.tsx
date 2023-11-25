@@ -4,16 +4,16 @@ import { maxWidth, textColor } from ".";
 export const HomeStyle = styled.main`
   width: 100%;
   height: 100%;
-  min-height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
   .container {
+    margin-top: 5%;
     display: flex;
     height: 100%;
     flex-direction: column;
     width: 100%;
-
+    background-color: "#630b86";
     align-items: center;
     justify-content: center;
     h1 {

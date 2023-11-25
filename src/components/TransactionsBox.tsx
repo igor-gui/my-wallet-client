@@ -1,37 +1,49 @@
-import { AuthContext } from "@/contexts";
-import { TransactionsListGenerator } from "@/hooks";
 import { getTransactions } from "@/services";
-import { TransactionBoxStyle } from "@/styles";
-import { ReactNode, useContext, useEffect, useState } from "react";
+import { TransactionBoxStyle, HeaderStyle, TransactionText } from "@/styles";
+import { TransactionParams } from "@/types";
+import dayjs from "dayjs";
+import { ReactNode, useEffect, useState } from "react";
 
 export function TransactionsBox() {
     const [transactions, setTransactions] = useState<ReactNode[] | null>(null);
 
-    const context = useContext(AuthContext)
+    const token = localStorage.getItem("token")
 
 
     useEffect(() => {
-        if (context?.user.token) {
-            getTransactions(context.user.token)
+        if (token) {
+            getTransactions(token)
                 .then(res => {
                     const transactionList = res.data;
 
-                    const HTMLTransactionsList: ReactNode[] = TransactionsListGenerator(transactionList) || [];
+                    const HTMLTransactionsList: ReactNode[] = transactionList.map((item: TransactionParams) => {
+
+                        function capitalizeFirstLetter(inputString: string): string {
+                            return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+                        }
+                        return (
+                            <TransactionText>
+                                <span className="date">{dayjs(item.date).format("DD/MM")}</span>
+                                <span className="description">{capitalizeFirstLetter(item.description)}</span>
+                                <span className={`price ${item.type}`}>{Number(item.price)}</span>
+                            </TransactionText>
+                        )
+                    })
                     setTransactions(HTMLTransactionsList);
                 })
                 .catch(err => alert(err.message));
 
         }
 
-    }, [context?.user])
+    }, [])
 
 
     return (
         <TransactionBoxStyle>
             {transactions && transactions.length > 0 ? transactions
                 :
-                <h2>Não há registros de <br/> 
-                    entrada ou saída</h2>}
+                <HeaderStyle>Não há registros de
+                    entrada ou saída</HeaderStyle>}
         </TransactionBoxStyle>
     )
 

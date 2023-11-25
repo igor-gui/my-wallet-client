@@ -1,9 +1,10 @@
-
 export type CreateTransactionParams = {
     description: string;
-    type: string;
+    type: string | undefined;
     price: number;
-    token: string;
+    token: string | null;
 }
 
-export type TransactionParams = Omit<CreateTransactionParams, "token"> & { date: Date }
+
+
+export type TransactionParams = Omit<CreateTransactionParams, "token"> & { date: Date, _id: string }
