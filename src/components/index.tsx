@@ -1,3 +1,6 @@
 export * from './SignInForm'
 export * from './SignUpForm'
 export * from './TransactionsBox'
+export * from './TransactionButtonBox'
+export * from './HomeContainer'
+export * from './Header'

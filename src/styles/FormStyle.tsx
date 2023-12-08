@@ -38,7 +38,7 @@ export const Button = styled.input`
     border-radius: 5px;
     background-color: ${() => buttonCollor};
     color: ${() => textColor};
-
+    cursor: pointer;
     max-width: 298px;
 
     font-family: 'Raleway';
