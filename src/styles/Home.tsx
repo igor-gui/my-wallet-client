@@ -16,14 +16,28 @@ export const HomeStyle = styled.main`
     background-color: "#630b86";
     align-items: center;
     justify-content: center;
+    div {
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
     h1 {
+      left: 0;
       color: ${() => textColor};
       font-family: "Raleway";
       ${maxWidth}
-      width: 80%;
       text-align: left;
       font-weight: 700;
       font-size: 26px;
     }
+    h2 {
+      color: ${() => textColor};
+      font-family: "Raleway";
+      ${maxWidth}
+      text-align: left;
+      font-weight: 700;
+      font-size: 26px;
+      cursor: pointer;
+    }
+  }
   }
 `;

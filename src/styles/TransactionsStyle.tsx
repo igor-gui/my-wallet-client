@@ -4,16 +4,22 @@ import { maxWidth, textColor } from ".";
 export const TransactionBoxStyle = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 5.5px;
     align-items: center;
     margin-top: 20px;
     box-sizing: border-box;
     padding-top: 20px;
+    padding-bottom: 20px;
 
+    overflow-y: scroll;
     width: 80%;
     max-width: 300px;
     ${() => maxWidth}
     min-height: 350px;
+    height: 50vh;
     border-radius: 5px;
+
+
 
     background-color: ${() => textColor};
 
@@ -28,7 +34,18 @@ export const TransactionBoxStyle = styled.div`
         font-weight: 400; 
     }
 
+     
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
 
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent; 
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent; 
+    }
 
 `;
 
@@ -39,7 +56,7 @@ export const HeaderStyle = styled.header`
     color: #868686;
     align-items: center;
     justify-content: center;
-    width: 180px;
+    width: 100%;
     text-align: center;
     h1 {
         color: ${textColor};
