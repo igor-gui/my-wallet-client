@@ -11,18 +11,18 @@ export function TransactionsBox() {
 
 
     useEffect(() => {
-        if (token) {
+        if (token && token != 'undefined') {
             getTransactions(token)
                 .then(res => {
                     const transactionList = res.data;
 
-                    const HTMLTransactionsList: ReactNode[] = transactionList.map((item: TransactionParams) => {
+                    const HTMLTransactionsList: ReactNode[] = transactionList.map((item: TransactionParams, i: number) => {
 
                         function capitalizeFirstLetter(inputString: string): string {
                             return inputString.charAt(0).toUpperCase() + inputString.slice(1);
                         }
                         return (
-                            <TransactionText>
+                            <TransactionText key={i}>
                                 <span className="date">{dayjs(item.date).format("DD/MM")}</span>
                                 <span className="description">{capitalizeFirstLetter(item.description)}</span>
                                 <span className={`price ${item.type}`}>{Number(item.price)}</span>

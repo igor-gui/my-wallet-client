@@ -1,36 +1,32 @@
 import { TransactionsBox } from "@/components";
 import { TransactionButtonBox } from "./TransactionButtonBox";
 import { useNavigate } from "react-router-dom";
+import { Container } from "@/styles";
+import { useContext } from "react";
+import { AuthContext } from "@/contexts";
 
 
 export function HomeContainer() {
-    const name = localStorage.getItem("name");
-    const navigate = useNavigate()
+    const context = useContext(AuthContext);
+    const navigate = useNavigate();
+    const name = context?.user.name;
     function deleteToken() {
-       localStorage.removeItem("token");
-       localStorage.removeItem("name");
-       navigate("/");
+        localStorage.clear();
+        navigate("/");
 
     }
     return (
-        <div className="container">
-            {/* <TopBoard> */}
+        <Container>
             <div>
-            <h1>Olá, {name}</h1>
-            <h2 onClick={() => deleteToken()}>log out</h2>
+                <h1>Olá, {name}</h1>
+                <h2 onClick={() => deleteToken()}>log out</h2>
             </div>
-            {/* <h1>log out</h1> */}
-            {/* </TopBoard> */}
+
             <TransactionsBox />
             <TransactionButtonBox />
-        </div>
+        </Container>
     );
 }
 
-// const TopBoard = styled.div`
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-//     width: 60%;
-// `
+
 

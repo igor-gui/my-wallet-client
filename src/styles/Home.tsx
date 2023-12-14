@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { maxWidth, textColor } from ".";
+import { textColor } from ".";
 
 export const HomeStyle = styled.main`
   width: 100%;
@@ -7,37 +7,36 @@ export const HomeStyle = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  .container {
-    margin-top: 5%;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    width: 100%;
-    background-color: "#630b86";
-    align-items: center;
-    justify-content: center;
-    div {
+  `;
+
+export const Container = styled.div`
+    
+      margin-top: 5%;
       display: flex;
+      height: 100%;
+      flex-direction: column;
       width: 80%;
-      justify-content: space-between;
-    h1 {
-      left: 0;
-      color: ${() => textColor};
-      font-family: "Raleway";
-      ${maxWidth}
-      text-align: left;
-      font-weight: 700;
-      font-size: 26px;
+      background-color: "#630b86";
+      align-items: center;
+      justify-content: center;
+      div {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+      h1 {
+        color: ${() => textColor};
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 26px;
+      }
+      h2 {
+        color: ${() => textColor};
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 26px;
+        cursor: pointer;
+      }
     }
-    h2 {
-      color: ${() => textColor};
-      font-family: "Raleway";
-      ${maxWidth}
-      text-align: left;
-      font-weight: 700;
-      font-size: 26px;
-      cursor: pointer;
-    }
-  }
-  }
+    
+  
 `;

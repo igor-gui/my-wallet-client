@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { maxWidth, textColor } from ".";
 
-export const TransactionBoxStyle = styled.div`
+export const TransactionBoxStyle = styled.section`
     display: flex;
     flex-direction: column;
     gap: 5.5px;

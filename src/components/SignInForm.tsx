@@ -8,15 +8,16 @@ import { CreateSessionParams } from "@/types";
 
 function SignInCredentials(): ReactNode {
     const [form, setForm] = useState({ email: '', password: '' })
-    
+
     const formState = { form, setForm };
     const context = useContext(AuthContext);
     const navigate = useNavigate()
 
-    useEffect(()=> {
-        
+    useEffect(() => {
+
         const token = localStorage.getItem("token")
-        if(token){
+        if (token && token != 'undefined') {
+            console.log(token)
             navigate('/home');
         }
 
@@ -24,17 +25,18 @@ function SignInCredentials(): ReactNode {
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>, form: CreateSessionParams) {
         e.preventDefault();
-    
+
         try {
             const { data } = await signIn(form);
+            console.log(data)
             localStorage.setItem("name", data.name);
             localStorage.setItem("token", data.token);
-            context?.setUser(data)
+            context?.setUser({...context.user, name: data.name, token: data.token})
             navigate('/home');
         } catch (error) {
             console.log(error)
         }
-    
+
     }
 
     return (

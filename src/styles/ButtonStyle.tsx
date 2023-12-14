@@ -20,6 +20,7 @@ export const ButtonStyle = styled.input`
     font-size: 17px;
     font-weight: 700;
     text-align: center;
+    justify-content: center;
 
     color: ${() => textColor};
     
