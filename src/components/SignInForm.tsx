@@ -28,7 +28,6 @@ function SignInCredentials(): ReactNode {
 
         try {
             const { data } = await signIn(form);
-            console.log(data)
             localStorage.setItem("name", data.name);
             localStorage.setItem("token", data.token);
             context?.setUser({...context.user, name: data.name, token: data.token})
