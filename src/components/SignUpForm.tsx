@@ -37,7 +37,8 @@ function SignUpCredentials() {
                 navigate('/');
             })
             .catch((err) => {
-                alert(err.message)
+                if(err.status === 409) return alert("E-mail já cadastrado!");
+                alert(err.message);
             })
     }
 
