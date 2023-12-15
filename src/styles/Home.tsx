@@ -22,6 +22,7 @@ export const Container = styled.div`
       div {
         display: flex;
         width: 80%;
+        max-width: 500px;
         justify-content: space-between;
       h1 {
         color: ${() => textColor};
